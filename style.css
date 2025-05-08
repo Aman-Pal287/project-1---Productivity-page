@@ -237,4 +237,44 @@ section.allElems .elem:active {
 }
 .todo-list-fullpage .todo-container .allTask .task button:active {
   scale: 0.96;
+}
+
+.daily-planner-fullpage h1 {
+  font-size: 70px;
+}
+.daily-planner-fullpage .day-planner {
+  background-color: var(--tri2);
+  height: 85%;
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: auto;
+}
+.daily-planner-fullpage .day-planner .day-planner-time {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 49%;
+  margin-bottom: 15px;
+}
+.daily-planner-fullpage .day-planner .day-planner-time p {
+  position: absolute;
+  top: 12%;
+  left: 0.5%;
+  font-size: 20px;
+  color: var(--tri1);
+}
+.daily-planner-fullpage .day-planner .day-planner-time input {
+  padding: 20px 50px;
+  width: 100%;
+  background-color: var(--sec);
+  border: none;
+  font-size: 35px;
+  padding-top: 34px;
+  outline: none;
 }/*# sourceMappingURL=style.css.map */
