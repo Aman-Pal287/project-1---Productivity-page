@@ -277,4 +277,77 @@ section.allElems .elem:active {
   font-size: 35px;
   padding-top: 34px;
   outline: none;
+}
+
+.motivation-fullpage {
+  position: relative;
+}
+.motivation-fullpage .motivation-container {
+  height: 500px;
+  width: 1000px;
+  background: var(--tri2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+}
+.motivation-fullpage .motivation-container .motivation-wrapper {
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--tri1);
+  border-radius: 30px;
+  padding: 15px;
+}
+.motivation-fullpage .motivation-container .motivation-wrapper .motivation-1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  block-size: -moz-fit-content;
+  block-size: fit-content;
+  background-color: var(--tri2);
+  padding: 30px;
+  border-radius: 20px;
+}
+.motivation-fullpage .motivation-container .motivation-wrapper .motivation-1 h2 {
+  font-size: 40px;
+  font-weight: 500;
+}
+.motivation-fullpage .motivation-container .motivation-wrapper .motivation-2 {
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.motivation-fullpage .motivation-container .motivation-wrapper .motivation-2 h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--sec);
+}
+.motivation-fullpage .motivation-container .motivation-wrapper .motivation-3 {
+  background-color: var(--tri2);
+  width: -moz-fit-content;
+  width: fit-content;
+  block-size: -moz-fit-content;
+  block-size: fit-content;
+  padding: 30px 30px;
+  border-radius: 20px;
+  margin-left: 80%;
+  margin-top: 80px;
+}
+.motivation-fullpage .motivation-container .motivation-wrapper .motivation-3 h2 {
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+}
+.motivation-fullpage .motivation-container::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: var(--tri1);
+  border-radius: 50px;
+  scale: 1.15;
+  filter: blur(150px);
+  z-index: 8;
 }/*# sourceMappingURL=style.css.map */

@@ -83,41 +83,55 @@ function todolist() {
 todolist()
 
 
-function dailyPlnner(){
-    
-var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
+function dailyPlnner() {
 
-var dayPlanner = document.querySelector('.day-planner')
+    var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
+
+    var dayPlanner = document.querySelector('.day-planner')
 
 
-var hours = Array.from({ length: 18 }, (_, idx) => `${6 + idx}:00 -${7 + idx}:00`)
+    var hours = Array.from({ length: 18 }, (_, idx) => `${6 + idx}:00 -${7 + idx}:00`)
 
-var wholeDaySum = ''
-hours.forEach((elem, idx) => {
+    var wholeDaySum = ''
+    hours.forEach((elem, idx) => {
 
-    var savedData = dayPlanData[idx] || '';
-    
+        var savedData = dayPlanData[idx] || '';
 
-    wholeDaySum = wholeDaySum + ` <div class="day-planner-time">
+
+        wholeDaySum = wholeDaySum + ` <div class="day-planner-time">
             <p>${elem}</p>
             <input id=${idx} type="text" placeholder="..." value=${savedData}>
           </div>`
 
-})
-dayPlanner.innerHTML = wholeDaySum
-
-
-var dayPlannerinput = document.querySelectorAll('.day-planner input')
-dayPlannerinput.forEach((elem) => {
-    elem.addEventListener('input', () => {
-        dayPlanData[elem.id] = elem.value
-        console.log("hello");
-        
-        localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
-
     })
-})
+    dayPlanner.innerHTML = wholeDaySum
+
+
+    var dayPlannerinput = document.querySelectorAll('.day-planner input')
+    dayPlannerinput.forEach((elem) => {
+        elem.addEventListener('input', () => {
+            dayPlanData[elem.id] = elem.value
+            console.log("hello");
+
+            localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
+
+        })
+    })
 
 }
 dailyPlnner();
 
+
+function motivationalQuoteContent() {
+    var motivationQuote = document.querySelector('.motivation-2 h1')
+    var motivationAuthor = document.querySelector('.motivation-3 h2')
+
+    async function fetchQuote() {
+        let data = await fetch("https://quotes-api-self.vercel.app/quote").then(raw => raw.json())
+        motivationQuote.innerHTML = data.quote
+        motivationAuthor.innerHTML = data.author
+    }
+    fetchQuote()
+}
+
+motivationalQuoteContent()
